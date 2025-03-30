@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Device Details" content="width=device-width, initial-scale=1.0">
+  <title>Device Details - Get System, Battery, and Display Info</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* CSS Styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: linear-gradient(135deg, #007BFF, #00BFFF);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header {
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    button {
+      background: #FFC107;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 30px;
+      margin-top: 20px;
+      color: #333;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #e0a800;
+    }
+
+    #features {
+      padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      margin: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .feature-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .feature {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 15px;
+      width: 250px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #FFC107;
+    }
+
+    .feature p {
+      font-size: 1rem;
+      color: #f4f4f9;
+    }
+
+    #animation {
+      padding: 40px 20px;
+    }
+
+    #appAnimation {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    #appAnimation img {
+      width: 80%;
+      border-radius: 15px;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+  </style>
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Device Details</h1>
+    <p>Get detailed information about your device's system, battery, and display in one place.</p>
+    <button id="downloadBtn">Download Now</button>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features">
+    <h2>Key Features</h2>
+    <div class="feature-list">
+      <div class="feature">
+        <h3>System Info</h3>
+        <p>View detailed system information like OS version, processor, and memory.</p>
+      </div>
+      <div class="feature">
+        <h3>Battery Status</h3>
+        <p>Check battery health, level, and charging status.</p>
+      </div>
+      <div class="feature">
+        <h3>Display Info</h3>
+        <p>Get details about your screen resolution, density, and orientation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animation Section -->
+  <section id="animation">
+    <h2>App Preview</h2>
+    <div id="appAnimation">
+      <img src="https://www.dropbox.com/scl/fi/rrujz8u7kvcc53c7m2o52/Device_Details.jpg?rlkey=79p1ahldwqj4xyjqh99061efv&st=zc02xbz9&dl=1" alt="App Screenshot">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Device Details. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Animation and Download -->
+  <script>
+    // GSAP Animation
+    gsap.from("#appAnimation", { duration: 2, opacity: 0, y: 50, ease: "power2.out" });
+    gsap.to("#appAnimation", { duration: 2, rotation: 360, scale: 1.1, repeat: -1, yoyo: true });
+
+    // Handle Download Button Click
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      const downloadLink = "https://www.dropbox.com/scl/fi/azjnncu68m19zfvnauiww/Device_Details.apk?rlkey=auq79drgjtfsboqenyax70xly&st=0okgnwxh&dl=1"; // Correct URL for the APK file
+      window.location.href = downloadLink;
+    });
+  </script>
+</body>
+</html>
